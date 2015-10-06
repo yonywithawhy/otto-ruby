@@ -18,6 +18,11 @@ post '/' do
   redirect to('/')
 end
 
+get '/fake-reset' do
+  @name = session['name']
+  erb :fake_reset
+end
+
 get '/reset' do
   session['name'] = nil
   redirect to('/')
